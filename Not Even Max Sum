@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int t;
+    cin>>t;
+    while(t--){    
+	int N;
+    cin>>N;
+    int A[N];
+    for(int i=0;i<N;i++)
+    {
+        cin>>A[i];
+    }
+    long long sum=0;
+   for(int i=0;i<N;i++)
+   {
+    sum+=A[i];
+   }
+   int smallest_odd=100000001;
+   for(int i=0;i<N;i++)
+   {
+    if(A[i]%2!=0)
+    if(A[i]<smallest_odd)
+    {
+        smallest_odd=A[i];
+    }
+   
+   } 
+   if(sum%2!=0)
+    {
+        cout<<sum<<endl;
+    }
+    else if(smallest_odd==100000001)
+    {
+        cout<<0<<endl;
+    }
+    else{
+        sum-=smallest_odd;
+        cout<<sum<<endl;
+    }}
+   return 0;
+
+	
+}
